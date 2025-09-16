@@ -1,18 +1,5 @@
-# Produto Alfa - Forecasting Pipeline
-
-Este projeto implementa um pipeline completo de previsão de demanda para o Produto Alfa, incluindo ingestão, análise exploratória, limpeza, modelagem, deploy em nuvem e monitoramento.
-
-## Pipeline de Solução
-
-```mermaid
-flowchart LR
-    A[Ingestão de Dados (S3/Blob)] --> B[Pré-processamento (EC2/Job)]
-    B --> C[Treinamento (EC2/Vertex AI/SageMaker)]
-    C --> D[Armazenamento do Modelo (S3/Blob)]
-    D --> E[API de Previsão (FastAPI + Docker + Kubernetes)]
-    E --> F[Monitoramento (Prometheus/Evidently)]
-    F --> G[Alertas (Grafana/CloudWatch)]
-```
+# Produto Alfa
+Lucas Venancio
 
 ## Como usar
 
@@ -40,6 +27,3 @@ flowchart LR
 curl -X POST "http://localhost:8000/predict" -H "Content-Type: application/json" -d '{"periods": 14}'
 ```
 
----
-
-> Para produção, recomenda-se orquestração com Kubernetes, armazenamento de modelos em nuvem e CI/CD para automação.
